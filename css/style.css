@@ -163,3 +163,20 @@ footer {
     grid-row: 4;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    /* Stop GIFs, videos, or animations */
+    .animated-element {
+      animation: none !important;
+      transition: none !important;
+    }
+  
+    /* Hide or replace auto-playing GIFs */
+    .gif {
+      display: none;
+    }
+  
+    .gif-replacement {
+      display: block; /* Show a static image instead */
+    }
+  }
+
