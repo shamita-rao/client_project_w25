@@ -1,0 +1,165 @@
+/* View: 700px */
+/* 1. General Styles */
+body {
+    font-family: 'Montserrat', Arial, sans-serif; /* Montserrat as primary font */
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto; /* Header, Nav, Main, Footer */
+    min-height: 100vh;
+}
+
+/* 2. Skip to Main Content Link */
+.skip-link {
+    position: absolute;
+    top: -3.125em;
+    left: 0;
+    background: #FFCB05;
+    color: #00274C;
+    padding: 0.625em;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* 3. Header Styling */
+header {
+    background: #00274C; /* UM Blue */
+    color: white;
+    text-align: center;
+    padding: 0.9375em;
+    grid-row: 1;
+}
+
+header img {
+    max-width: 100%; /* Make image responsive */
+    height: auto;
+    display: block; /* Remove extra space below image */
+    margin: 0 auto; /* Center the image */
+}
+
+/* 4. Navigation Styling */
+nav {
+    background: #FFCB05; /* UM Maize */
+    padding: 0.625em;
+    margin-top: 1.25em;
+    border-radius: 0.5em;
+    grid-row: 2;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0.3125em 0;
+}
+
+nav ul li a {
+    color: black;
+    font-weight: bold;
+    padding: 0.5em 0.9375em;
+    display: block;
+    background: white;
+    border-radius: 0.5em;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background: #00274C; /* UM Blue */
+    color: white;
+    text-decoration-line: underline;
+}
+
+/* Active Page Styling */
+nav ul li a.active {
+    background: #00274C; /* UM Blue */
+    color: white;
+    border: 0.125em solid #FFCB05; /* UM Maize */
+    text-decoration-line: underline;
+}
+
+/* 5. Main Content Styling */
+main {
+    padding: 1.25em;
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 1.25em; /* Space between sections */
+}
+
+h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #f4f4f4;
+}
+
+h2, h3 {
+    color: #00274C; /* UM Blue */
+}
+
+h2 {
+    border-bottom: 0.125em solid #FFCB05; /* UM Maize */
+    padding-bottom: 0.3125em;
+}
+
+section {
+    background: white;
+    padding: 0.9375em;
+    margin-bottom: 1.25em;
+    border-radius: 0.5em;
+    box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.1);
+}
+
+/* 6. Lists Styling */
+ol, ul {
+    padding-left: 1.25em;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+/* 7. Image Styling */
+figure {
+    text-align: center;
+}
+
+figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5em;
+}
+
+figcaption {
+    font-style: italic;
+    font-size: 0.875em;
+    color: #666;
+}
+
+/* 8. Footer Styling */
+footer a:visited {
+    color: white; /* Keep the visited link the same color as the default */
+}
+
+footer {
+    text-align: center;
+    background: #00274C; /* UM Blue */
+    color: white;
+    padding: 0.625em;
+    margin-top: 1.25em;
+    grid-row: 4;
+}
+
