@@ -115,7 +115,45 @@
         UMGPT. (2024). UMGPT (August 29th version) [Large language model]. -->
     </main>
     <footer>
-        <p>Copyright © 2025 The Regents of the University of Michigan</p>
-        </footer>
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h3>Contact</h3>
+            <p>123 Michigan Ave<br>Ann Arbor, MI 48109</p>
+            <p><a href="tel:+17347654800">(734) 765-4800</a></p>
+          </div>
+      
+          <div class="footer-column">
+            <h3>Hours</h3>
+            <p>Mon-Fri: 9am-5pm<br>Sat: 10am-4pm<br>Sun: Closed</p>
+          </div>
+        </div>
+        <br>
+        <p>© Copyrights <span id="year"></span> Univeristy of Michigan. All rights reserved.</p>
+        </div>
+      </footer>
+      
+    
+    <button id="back-to-top" aria-label="Back to top">↑ Top</button>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Back to top button
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
