@@ -1,7 +1,6 @@
-/* View: 700px */
-/* 1. General Styles */
+/* Mobile View: 700px */
 body {
-    font-family: 'Montserrat', Arial, sans-serif; /* Montserrat as primary font */
+    font-family: 'Montserrat', Arial, sans-serif;
     font-size: 1em;
     line-height: 1.6;
     color: #333;
@@ -9,11 +8,11 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: auto auto 1fr auto; /* Header, Nav, Main, Footer */
+    grid-template-rows: auto auto auto 1fr auto;
+    grid-template-columns: 100%;
     min-height: 100vh;
 }
 
-/* 2. Skip to Main Content Link */
 .skip-link {
     position: absolute;
     top: -3.125em;
@@ -28,28 +27,28 @@ body {
     top: 0;
 }
 
-/* 3. Header Styling */
 header {
-    background: #00274C; /* UM Blue */
+    background: #00274C;
     color: white;
     text-align: center;
     padding: 0.9375em;
     grid-row: 1;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 header img {
-    max-width: 100%; /* Make image responsive */
+    max-width: 100%;
     height: auto;
-    display: block; /* Remove extra space below image */
-    margin: 0 auto; /* Center the image */
+    display: block;
+    margin: 0 auto;
 }
 
-/* 4. Navigation Styling */
 nav {
-    background: #FFCB05; /* UM Maize */
+    background: #FFCB05;
     padding: 0.625em;
-    margin-top: 1.25em;
-    border-radius: 0.5em;
+    margin-top: 0;
+    border-radius: 0;
     grid-row: 2;
 }
 
@@ -57,13 +56,9 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-nav ul li {
-    margin: 0.3125em 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5em;
 }
 
 nav ul li a {
@@ -74,55 +69,64 @@ nav ul li a {
     background: white;
     border-radius: 0.5em;
     text-decoration: none;
+    text-align: center;
 }
 
 nav ul li a:hover {
-    background: #00274C; /* UM Blue */
+    background: #00274C;
     color: white;
     text-decoration-line: underline;
 }
 
-/* Active Page Styling */
 nav ul li a.active {
-    background: #00274C; /* UM Blue */
+    background: #00274C;
     color: white;
-    border: 0.125em solid #FFCB05; /* UM Maize */
+    border: 0.125em solid #FFCB05;
     text-decoration-line: underline;
-}
-
-/* 5. Main Content Styling */
-main {
-    padding: 1.25em;
-    grid-row: 3;
-    display: grid;
-    grid-template-columns: 1fr; /* Single column for mobile */
-    gap: 1.25em; /* Space between sections */
 }
 
 h1 {
     font-size: 1.5em;
     font-weight: bold;
     color: #f4f4f4;
+    background: #00274C;
+    padding: 0.75em 1.25em;
+    margin: 0;
+    grid-row: 3;
+    text-align: center;
+}
+
+main {
+    padding: 1.25em;
+    grid-row: 4;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25em;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25em;
 }
 
 h2, h3 {
-    color: #00274C; /* UM Blue */
+    color: #00274C;
+    font-weight: bold;
 }
 
 h2 {
-    border-bottom: 0.125em solid #FFCB05; /* UM Maize */
+    border-bottom: 0.125em solid #FFCB05;
     padding-bottom: 0.3125em;
 }
 
 section {
     background: white;
     padding: 0.9375em;
-    margin-bottom: 1.25em;
     border-radius: 0.5em;
     box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.1);
 }
 
-/* 6. Lists Styling */
 ol, ul {
     padding-left: 1.25em;
 }
@@ -131,9 +135,11 @@ li {
     margin-bottom: 0.5em;
 }
 
-/* 7. Image Styling */
 figure {
     text-align: center;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 figure img {
@@ -147,36 +153,116 @@ figcaption {
     font-style: italic;
     font-size: 0.875em;
     color: #666;
-}
-
-/* 8. Footer Styling */
-footer a:visited {
-    color: white; /* Keep the visited link the same color as the default */
+    margin-top: 0.5em;
 }
 
 footer {
     text-align: center;
-    background: #00274C; /* UM Blue */
+    background: #00274C;
     color: white;
     padding: 0.625em;
-    margin-top: 1.25em;
-    grid-row: 4;
+    grid-row: 5;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    /* Stop GIFs, videos, or animations */
-    .animated-element {
-      animation: none !important;
-      transition: none !important;
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+.footer-column h3 {
+    color: #FFCB05;
+    margin-bottom: 0.5em;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1em;
+    border-top: 1px solid #FFCB05;
+}
+
+.social-links {
+    margin-top: 0.5em;
+}
+
+footer a {
+    color: #FFCB05;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Tablet View (≥900px) */
+@media screen and (min-width: 900px) {
+    nav ul {
+        grid-template-columns: repeat(4, auto);
+        justify-content: center;
+        gap: 1.5em;
     }
-  
-    /* Hide or replace auto-playing GIFs */
-    .gif {
-      display: none;
+
+    nav ul li a {
+        background: white;
+        color: black;
+        padding: 0.75em 1em;
+        white-space: nowrap;
     }
-  
-    .gif-replacement {
-      display: block; /* Show a static image instead */
+
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+        padding: 2em;
     }
-  }
+}
+
+/* Desktop View (≥1100px) */
+@media screen and (min-width: 1100px) {
+    nav ul {
+        gap: 2em;
+        padding: 0 3em;
+    }
+
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 3em;
+    }
+
+    footer {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 2em 3em;
+    }
+
+    .footer-section {
+        padding: 0 1.5em;
+    }
+
+    .footer-section:not(:last-child) {
+        border-right: 1px solid rgba(255, 203, 5, 0.3);
+    }
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 1.25em;
+    right: 1.25em;
+    padding: 0.5em 1em;
+    background-color: #FFCB05;
+    color: #00274C;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+}
+
+#back-to-top:hover {
+    background-color: #00274C;
+    color: white;
+}
 
